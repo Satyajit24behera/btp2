@@ -3,7 +3,7 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 
 load_dotenv()
-genai.configure(api_key="AIzaSyA7ccHU1oXGCynowICckB4lYZ3ZLf5GxYk")
+genai.configure(api_key="AIzaSyCwzZNrrqzzgczPgEebvoNxpePxDIm8cP4")
 
 def generate_recommendations(user_data: dict, confirmed_conditions: list[str]) -> str:
     conditions_md = "\n".join(f"- {cond}" for cond in confirmed_conditions)
@@ -33,4 +33,5 @@ def generate_recommendations(user_data: dict, confirmed_conditions: list[str]) -
     model = genai.GenerativeModel("gemini-2.5-flash")
     response = model.generate_content(prompt)
     return response.text
+
 
