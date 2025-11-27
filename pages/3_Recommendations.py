@@ -57,7 +57,7 @@ def generate_recommendations(user_data: dict, confirmed_conditions: list[str]) -
     - [One-liner supplement recommendation 2]
     """
 
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash")
     response = model.generate_content(prompt)
     return response.text.strip()
 
@@ -111,3 +111,4 @@ if "recommendations" in st.session_state:
         st.info("DOCX download removed in this version.")
 
     st.success("✅ All set! You can now download your plan.")
+
