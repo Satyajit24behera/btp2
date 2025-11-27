@@ -12,10 +12,10 @@ image = Image.open("assets/iitkgp_header.png")  # 📌 Make sure image.png is in
 st.image(image, width=1500)
 
 # Title and author info
-st.markdown("##  **Personalized Wellness Guide**", unsafe_allow_html=True)
+st.markdown("##  **WellNOVA**", unsafe_allow_html=True)
 st.markdown("### By **Satyajit Behera**", unsafe_allow_html=True)
 st.markdown("<div style='text-align: center;'>IIT KHARAGPUR</div>", unsafe_allow_html=True)
-st.markdown("<div style='text-align: center;'>BTP-2</div>", unsafe_allow_html=True)
+st.markdown("<div style='text-align: center;'>MTP-1</div>", unsafe_allow_html=True)
 st.markdown("---")
 
 # Welcome message
@@ -24,3 +24,4 @@ st.markdown("Use the **sidebar** to navigate through the steps and generate your
 
 # Optional: Call to action or tips
 st.info("Start by entering your basic details under **User Input**.")
+
