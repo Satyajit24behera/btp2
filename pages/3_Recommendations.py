@@ -8,7 +8,17 @@ from utils.pdf_generator import generate_pdf, parse_recommendations  # 📌 Use 
 
 # ------------------------ Environment Setup ------------------------
 load_dotenv()
-genai.configure(api_key=os.getenv(API_KEY))
+
+# Prefer Streamlit secrets; fallback to environment variable if needed
+API_KEY = st.secrets.get("API_KEY") or os.getenv("API_KEY")
+
+if not API_KEY:
+    raise ValueError(
+        "❌ Gemini API key not found. Please set API_KEY in Streamlit secrets "
+        "or as an environment variable."
+    )
+
+genai.configure(api_key=API_KEY)
 
 # ------------------------ Streamlit Setup ------------------------
 st.set_page_config(page_title="Wellness Recommendations", layout="centered")
@@ -111,5 +121,3 @@ if "recommendations" in st.session_state:
         st.info("DOCX download removed in this version.")
 
     st.success("✅ All set! You can now download your plan.")
-
-
