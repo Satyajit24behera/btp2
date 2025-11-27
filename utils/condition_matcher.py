@@ -3,7 +3,7 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 import streamlit as st
 load_dotenv()
-genai.configure(api_key="AIzaSyCMkDMaIvv2O33FVB25159qEKXyO0Uz9sY")
+genai.configure(api_key=os.getenv(API_KEY))
 
 def match_conditions(user_data: dict, medical_report: str = "") -> str:
     prompt = f"""
@@ -23,6 +23,7 @@ def match_conditions(user_data: dict, medical_report: str = "") -> str:
     model = genai.GenerativeModel("gemini-2.5-flash")
     response = model.generate_content(prompt)
     return response.text
+
 
 
 
