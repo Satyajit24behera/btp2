@@ -20,6 +20,7 @@ def match_conditions(user_data: dict, medical_report: str = "") -> str:
     Medical Report:
     {medical_report if medical_report else 'Not provided'}
     """
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash")
     response = model.generate_content(prompt)
     return response.text
+
